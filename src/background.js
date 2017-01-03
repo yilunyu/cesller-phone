@@ -5,7 +5,7 @@
 
 import path from 'path';
 import url from 'url';
-import { app, Menu } from 'electron';
+import { app, Menu, BrowserWindow } from 'electron';
 import { devMenuTemplate } from './menu/dev_menu_template';
 import { editMenuTemplate } from './menu/edit_menu_template';
 import createWindow from './helpers/window';
@@ -46,6 +46,7 @@ app.on('ready', function () {
         slashes: true
     }));
 
+    mainWindow.openDevTools();
     if (env.name === 'development') {
         mainWindow.openDevTools();
     }
@@ -54,3 +55,12 @@ app.on('ready', function () {
 app.on('window-all-closed', function () {
     app.quit();
 });
+
+export var openWindow = (filename) => {
+  let win = new BrowserWindow({width:800, height:600});
+  win.loadURL(url.format({
+      pathname: path.join(__dirname, filename),
+      protocol: 'file:',
+      slashes: true
+  }))
+}
