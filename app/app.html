@@ -239,7 +239,14 @@
     }
     </script>
     <script src="../vendor/jquery/jquery.min.js"></script>
+    <script>
+      var sp = require('serialport');
 
+      sp.list(function(err, ports) {
+        console.log("app.html");
+        console.log(ports);
+      });
+    </script>
     <script src="helpers/context_menu.js"></script>
     <script src="helpers/external_links.js"></script>
 

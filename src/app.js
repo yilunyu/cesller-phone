@@ -16,14 +16,29 @@ var appDir = jetpack.cwd(app.getAppPath());
 var button;
 //var button = document.createElement('button')
 //button.textContent = 'Open Window'
-
+var SerialPort = require('serialport')
 
 //document.body.appendChild(button);
 // Holy crap! This is browser window with HTML and stuff, but I can read
 // here files like it is node.js! Welcome to Electron world :)
 /*console.log('The author of this app is:', appDir.read('package.json', 'json').author);
 */
+
 document.addEventListener('DOMContentLoaded', function () {
+  //console.log('app.js');
+  SerialPort.list(function(err, ports) {
+    //console.log('app.js');
+    //console.log(ports);
+
+    var port = new SerialPort(ports[1].comName, {
+      parser: SerialPort.parsers.readline('\n')
+    });
+    port.on('data', function (data) {
+      console.log('Data: ' + data);
+      port.write("received message")
+     });
+  })
+
   /*button = document.getElementById('button');
   console.log('button retrieved');
   button.addEventListener('click', () => {

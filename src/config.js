@@ -15,5 +15,7 @@ $(document).ready(function(event){
   $("input").on( "change", function() {
     $(this).attr('placeholder') = $(this).val();
   });
-
+  //$("button").on("click", function(){
+  //  $(this).value =
+  //})
 })
