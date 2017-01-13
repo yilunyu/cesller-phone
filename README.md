@@ -1,16 +1,17 @@
-# electron-boilerplate [![Build Status](https://travis-ci.org/szwacz/electron-boilerplate.svg?branch=master)](https://travis-ci.org/szwacz/electron-boilerplate) [![Build status](https://ci.appveyor.com/api/projects/status/s9htc1k5ojkn08fr?svg=true)](https://ci.appveyor.com/project/szwacz/electron-boilerplate)
+# Cesller-phone
 
-A minimalistic yet comprehensive boilerplate application for [Electron runtime](http://electron.atom.io). Tested on macOS, Windows and Linux.  
+This project is based on szwacz's electron-boilerplate project: https://github.com/szwacz/electron-boilerplate
 
-This project does not impose on you any framework (like Angular or React). It tries to give you only the 'electron' part of technology stack so you can pick your favorite technologies to build the actual app.
+This project allows users to configure Cesller Technology's F806 and F816 analog phone switch boxes from the computer, instead of configuring it by pressing buttons on the machine directly. Since the project is written in electron, it is able to be packaged and run on most major operating systems including Windows, OS X, and Linux.
 
+This project is still under development.
 # Quick start
 
 The only development dependency of this project is [Node.js](https://nodejs.org), so just make sure you have it installed.
 Then type few commands known to every Node developer...
 ```
-git clone https://github.com/szwacz/electron-boilerplate.git
-cd electron-boilerplate
+git clone https://github.com/yilunyu/cesller-phone
+cd cesller-phone
 npm install
 npm start
 ```
